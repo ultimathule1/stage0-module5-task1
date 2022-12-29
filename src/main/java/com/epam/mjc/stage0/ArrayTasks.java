@@ -62,7 +62,7 @@ public class ArrayTasks {
         int retInd = -1;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == number) {
-                retInd = i + 2;
+                retInd = i;
                 break;
             }
         }
