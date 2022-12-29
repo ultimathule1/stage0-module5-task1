@@ -11,7 +11,7 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-        return new String[] {"WINTER", "SPRING", "SUMMER", "FALL"};
+        return new String[] {"WINTER", "SPRING", "SUMMER", "AUTUMN"};
     }
 
     /**
@@ -62,7 +62,8 @@ public class ArrayTasks {
         int retInd = -1;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == number) {
-                retInd = i + 2;
+                retInd = i + 1;
+                break;
             }
         }
         return retInd;
@@ -79,7 +80,7 @@ public class ArrayTasks {
      */
     public String[] reverseArray(String[] arr) {
         String[] retArr = arr.clone();
-        for (int i = 0, j = retArr.length - 1; i != j; i++, j--) {
+        for (int i = 0, j = retArr.length - 1; i < j; i++, j--) {
             String tmp = arr[i];
             retArr[i] = arr[j];
             retArr[j] = tmp;
@@ -102,10 +103,11 @@ public class ArrayTasks {
     public int[] getOnlyPositiveNumbers(int[] arr) {
         int lengthPosArr = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < 0) {
+            if (arr[i] > 0) {
                 lengthPosArr++;
             }
         }
+        System.out.println("lengthPosArr = " + lengthPosArr);
         int[] retArr = new int[lengthPosArr];
         for (int i = 0, j = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
